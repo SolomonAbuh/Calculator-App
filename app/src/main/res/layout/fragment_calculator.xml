@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculatorFragment">
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/ic_moon"
+        app:layout_constraintBottom_toBottomOf="@+id/converter_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/converter_tv" />
+
+    <TextView
+        android:id="@+id/calculator_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/calculator_tv_bg"
+        android:paddingStart="15dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="10dp"
+        android:text="Calculator"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@id/converter_tv"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton" />
+
+    <TextView
+        android:id="@+id/converter_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Coverter"
+        app:layout_constraintBottom_toBottomOf="@+id/calculator_tv"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintStart_toEndOf="@+id/calculator_tv"
+        app:layout_constraintTop_toTopOf="@+id/calculator_tv" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/firstRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/secondRow"
+        app:layout_constraintTop_toTopOf="@+id/guideline3">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAc"
+            style="@style/NumberBtn"
+            android:backgroundTint="@color/white"
+            android:text="AC"
+            app:layout_constraintEnd_toStartOf="@+id/btnClear"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/firstRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClear"
+            style="@style/OperatorsBtn"
+            app:icon="@drawable/ic_clear"
+            app:layout_constraintEnd_toStartOf="@+id/btnPercent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnAc"
+            app:layout_constraintTop_toTopOf="@id/firstRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPercent"
+            style="@style/OperatorsBtn"
+            app:icon="@drawable/ic_percentage"
+            app:layout_constraintEnd_toStartOf="@+id/btnDivide"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnClear"
+            app:layout_constraintTop_toTopOf="@id/firstRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDivide"
+            style="@style/OperatorsBtn"
+            app:icon="@drawable/ic_idivide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnPercent"
+            app:layout_constraintTop_toTopOf="@id/firstRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/secondRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/ThirdRow"
+        app:layout_constraintTop_toBottomOf="@id/firstRow">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn7"
+            style="@style/NumberBtn"
+            android:text="7"
+            app:layout_constraintEnd_toStartOf="@+id/btn8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/secondRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn8"
+            style="@style/NumberBtn"
+            android:text="8"
+            app:layout_constraintEnd_toStartOf="@+id/btn9"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn7"
+            app:layout_constraintTop_toTopOf="@id/secondRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn9"
+            style="@style/NumberBtn"
+            android:text="9"
+            app:layout_constraintEnd_toStartOf="@+id/btnMultiplication"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn8"
+            app:layout_constraintTop_toTopOf="@id/secondRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMultiplication"
+            style="@style/OperatorsBtn"
+            app:icon="@drawable/ic_imultiply"
+            app:iconGravity="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn9"
+            app:layout_constraintTop_toTopOf="@id/secondRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ThirdRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/fourthRow"
+        app:layout_constraintTop_toBottomOf="@id/secondRow">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn4"
+            style="@style/NumberBtn"
+            android:text="4"
+            app:layout_constraintEnd_toStartOf="@+id/btn5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ThirdRow"
+            app:layout_constraintTop_toTopOf="@id/ThirdRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn5"
+            style="@style/NumberBtn"
+            android:text="5"
+            app:layout_constraintEnd_toStartOf="@+id/btn6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn4"
+            app:layout_constraintTop_toTopOf="@id/ThirdRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn6"
+            style="@style/NumberBtn"
+            android:text="6"
+            app:layout_constraintEnd_toStartOf="@+id/btnSubtract"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn5"
+            app:layout_constraintTop_toTopOf="@id/ThirdRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubtract"
+            style="@style/OperatorsBtn"
+            app:icon="@drawable/ic_isubtract"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn6"
+            app:layout_constraintTop_toTopOf="@id/ThirdRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fourthRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/fifthRow"
+        app:layout_constraintTop_toBottomOf="@id/ThirdRow">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn1"
+            style="@style/NumberBtn"
+            android:text="1"
+            app:layout_constraintEnd_toStartOf="@+id/btn2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/fourthRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn2"
+            style="@style/NumberBtn"
+            android:text="2"
+            app:layout_constraintEnd_toStartOf="@+id/btn3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn1"
+            app:layout_constraintTop_toTopOf="@id/fourthRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn3"
+            style="@style/NumberBtn"
+            android:text="3"
+            app:layout_constraintEnd_toStartOf="@+id/btnAddition"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn2"
+            app:layout_constraintTop_toTopOf="@id/fourthRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddition"
+            style="@style/OperatorsBtn"
+            app:icon="@drawable/ic_plus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn3"
+            app:layout_constraintTop_toTopOf="@id/fourthRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fifthRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fourthRow">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPlusMinus"
+            style="@style/OperatorsBtn"
+            app:icon="@drawable/ic_plus_minus"
+            app:layout_constraintEnd_toStartOf="@+id/btn0"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/fifthRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn0"
+            style="@style/NumberBtn"
+            android:text="0"
+            app:layout_constraintEnd_toStartOf="@+id/btnDot"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnPlusMinus"
+            app:layout_constraintTop_toTopOf="@id/fifthRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDot"
+            style="@style/NumberBtn"
+            android:text="."
+            app:layout_constraintEnd_toStartOf="@+id/btnEqual"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn0"
+            app:layout_constraintTop_toTopOf="@id/fifthRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEqual"
+            style="@style/OperatorsBtn"
+            app:icon="@drawable/ic_equal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnDot"
+            app:layout_constraintTop_toTopOf="@id/fifthRow"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Circle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/resultTv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:textAlignment="textEnd"
+        android:textColor="#707070"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3" />
+
+    <TextView
+        android:id="@+id/history_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/grey"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/resultTv"
+        tools:text="0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
